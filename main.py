@@ -51,3 +51,30 @@ def Crawl(arg=None):
 
         # Scroll bar settings
         scrollbar.config(command=text.yview)
+        
+        
+        crawler = tk.Tk()
+
+        # Creating size of window
+        crawler.geometry('500x500')
+
+        # Doesn't let the window size to be changeable
+        crawler.resizable(width=False, height=False)
+
+        # Creating Title
+        crawler.title('URL Crazy')
+
+        # Creating title icon
+        crawler.iconbitmap('img/spider.ico')
+
+        # Top Frame
+        top_frame = Label(crawler, text='WEB CRAWLER',font = ('Cosmic', 25, 'bold'), bg='#778899', fg='white', relief='groove',padx=500, pady=30, bd='5')
+        top_frame.pack(side='top')
+
+        canvas = Canvas(crawler, width=500, height=500)
+
+        image = ImageTk.PhotoImage(Image.open('img/img1.jpg'))
+
+        #Positioning Image
+        canvas.create_image(0,0, anchor=NW, image=image)
+        canvas.pack()
