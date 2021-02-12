@@ -78,3 +78,32 @@ def Crawl(arg=None):
         #Positioning Image
         canvas.create_image(0,0, anchor=NW, image=image)
         canvas.pack()
+        
+        # Creating Frame
+        frame = LabelFrame(crawler, padx=30, pady=40, bg='#F5FFFA', bd='5', relief='groove')
+        frame.place(relx = 0.5, rely = 0.5, anchor = CENTER)
+
+        # Label 
+        url_add = tk.Label(frame, text = 'Enter a URL or Web Address',font=('Arial',12, 'bold'),bg='white', fg='#778899').pack()
+
+        # Entry or Input
+        url_entry = tk.Entry(frame, font=('calibre',10,'normal'), justify = 'center', bg='#B0C4DE', width='30')
+
+        # Returning value to the function
+        url_entry.bind('<Return>', Crawl)
+
+        # Setting focus for input
+        url_entry.focus_set()
+
+        # Placing the button
+        url_entry.pack()
+
+        # Label for seperating Buttons
+        label = Label(frame, bg='white').pack()
+
+        # Creating Submit button and positioning it
+        crawl = tk.Button(frame, text = "Go", width="10", bd = '3', command = Crawl, font = ('Times', 12, 'bold'), bg='#778899',relief='groove', justify = 'center', pady='5').pack()
+
+        # Creating window only once
+        crawler.mainloop()
+
