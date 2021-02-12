@@ -6,7 +6,39 @@ from bs4 import BeautifulSoup
 import validators
 import urllib.request
 
+def About(arg=None):
+    root = Tk()
+    root.geometry("500x500")
 
+    # specify size of window.
+    root.title("URL Crazy")
+    root.iconbitmap("img/spider.ico")
+
+    # Create text widget and specify size.
+    T = Text(root, height=20, width=50)
+
+    # Create label
+    l = Label(root, text="Web Crawling")
+    l.config(font=("Courier", 14))
+
+    Fact = """
+    A web crawler, spider, or search engine bot downloads and indexes content from all over the Internet. The goal of such a bot is to  learn what(almost) every webpage on the web is  about, so that  the information can be retrieved when it's needed.     They're called "web crawlers" because crawli-ng is the technical term for automatically accessi-ng a website and obtaining data via a software pro-   gram. A web crawler bot is like someone who goes through all the books in a disorganized libra-ry  and puts together a card catalog so that anyo-ne   who visits the library can quickly and easily find the information they need. To help categori-ze and sort the library's books by topic, the organizer will read the title, summary, and some of   the internal text of each book to figure out what it's about."""
+
+    # Create button for next text.
+
+    # Create an Exit button.
+    b2 = Button(root, text="Exit",
+                command=root.destroy)
+
+    l.pack()
+    T.pack()
+    b2.pack()
+
+    # Insert The Fact.
+    T.insert(tk.END, Fact)
+
+    tk.mainloop()
+    
 def Crawl(arg=None):
     # Checking for blank url
     if url_entry.get() == '':
